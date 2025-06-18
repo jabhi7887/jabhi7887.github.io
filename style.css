@@ -766,13 +766,14 @@ footer span{
 /* ========== Mobile (below 768px) ========== */
 @media screen and (max-width: 767px) {
   .container {
-    display: flow-root;
+    display: block;
     width: 100%;
     grid-template-columns: 1fr;
     padding: 20px;
     padding-top: 50px;
-    min-width: 50px;
+    padding-right: 25px;
     margin: 10px;
+    max-width: 100%;
   }
 
   .navbar {
