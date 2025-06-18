@@ -713,7 +713,7 @@ footer span{
 @media screen and (max-width: 767px) {
   .container {
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: 20px 10px 0px 10px;
   }
 
   .navbar {
