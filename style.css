@@ -766,7 +766,7 @@
   /* ========== Mobile (below 768px) ========== */
   @media screen and (max-width: 767px) {
     .container {
-      display: block;
+      display: grid;
       width: 100%;
       grid-template-columns: 1fr;
       padding: 20px;
@@ -780,6 +780,7 @@
       display: grid;
       grid-template-columns: 85px 1fr;
       padding-bottom: 30px;
+
     }
 
     .nav {
