@@ -764,7 +764,7 @@ footer span{
 
 
 /* ========== Mobile (below 768px) ========== */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .container {
     display: grid;
     grid-template-columns: 1fr;
