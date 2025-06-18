@@ -835,7 +835,7 @@
   }
   .contact-container {
     background: var(--accent-04);
-    padding: 20px;
+    padding: 10px;
     justify-content: space-between;
     border-radius: 15px;
     gap: 50px;
@@ -846,5 +846,9 @@
   .contact-section ul{
     list-style: none;
     padding-right: 50px;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap : 5px
+   
   }
   }
