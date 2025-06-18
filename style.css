@@ -768,7 +768,7 @@ footer span{
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    max-width: 400px;
+    max-width: 380px;
     padding: 20px;
     padding-top: 50px;
   }
