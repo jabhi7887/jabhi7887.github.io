@@ -709,103 +709,125 @@ footer span{
 
 /* ===================Responsiveness======================*/
 
-/* ========== Mobile First (below 768px) ========== */
-@media screen and (max-width: 767px) 
+/* ========== Desktop (1024px and above) ========== */
+@media screen and (min-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: 95px 450px 1fr;
+    max-width: 1550px;
+  }
+}
 
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--accent-04);
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    z-index: 10;
+/* ========== Tablet (768px to 1023px) ========== */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    max-width: 650px;
+    grid-column: 2 / 4;
   }
 
-  .navbar > div {
-    padding: 10px;
+  .achivements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .resume-content {
+    grid-template-columns: 1fr;
   }
 
-  .achivements,
-  .skills,
-  .resume-content,
-  .edu-container,
+  /* Contact form side by side */
   .contact-container {
     grid-template-columns: 1fr;
   }
 
+  /* Skills grid to 3 columns */
   .skills {
-    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .project {
-    padding: 15px;
-    margin: 10px;
-  }
-
-  .profile .img {
-    width: 100px;
-    margin: -50px auto 0;
-  }
-
-  form {
-    padding: 0 10px;
-  }
-}
-
-/* ========== Tablets (768px to 1023px) ========== */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .container {
-    grid-template-columns: 85px 1fr;
-    padding: 30px;
-  }
-
-  .achivements {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 20px;
-  }
-
-  .skills {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
+  /* Adjust education grid */
   .edu-container {
     grid-template-columns: 1fr;
   }
 
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-
+  /* Smaller padding on profile and projects */
   .project {
     padding: 20px;
   }
 
   .profile .img {
     width: 120px;
+    margin: -55px auto 0;
   }
 }
 
-/* ========== Desktop (1024px and above) ========== */
-@media screen and (min-width: 1024px) {
+
+/* ========== Mobile (below 768px) ========== */
+@media screen and (max-width: 767px) {
   .container {
-    grid-template-columns: 95px 450px 1fr;
-    padding: 50px;
-    max-width: 1500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    padding: 20px;
+    padding-top: 50px;
+  }
+
+  .navbar {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+  }
+
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 5px;
+  }
+
+  .nav .divider,
+  .nav p {
+    display: none;
+  }
+
+  .navbar > div{
+    box-shadow: rgba(0, 0, 0,0.16) 0px 10px 36px 0px,
+                rgba(0, 0, 0,0.06) 0px 0px 0px 1px,
   }
 
   .achivements {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
   }
+  .resume-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-wrap: wrap;
+  gap: 30px;
+}
 
-  .skills {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .edu-container,
-  .resume-content,
-  .contact-container {
-    grid-template-columns: 1fr 1fr;
-  }
+.edu-container {
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.contact-container {
+  background: var(--accent-04);
+  padding: 20px;
+  justify-content: space-between;
+  border-radius: 15px;
+  gap: 50px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.contact-section ul{
+  list-style: none;
+  padding-right: 50px;
+}
 }
