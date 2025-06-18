@@ -769,7 +769,7 @@ footer span{
     display: grid;
     grid-template-columns: 1fr;
     max-width: 500px;
-    padding-top: 50px;
+    padding-top: 50px 10px 0 10px;
   }
 
   .navbar {
