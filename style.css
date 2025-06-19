@@ -773,6 +773,7 @@
       padding-top: 50px;   
       max-width: 100%;
       margin: 0 3px 0 0;
+      position: absolute;
     }
 
     .navbar {
