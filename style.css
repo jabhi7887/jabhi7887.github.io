@@ -766,7 +766,7 @@
   /* ========== Mobile (below 768px) ========== */
   @media screen and (max-width: 767px) {
     .container {
-      display: flow-root;
+      display: inline-grid;
       width: 100%;
       grid-template-columns: 1fr;
       padding: 20px;
