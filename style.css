@@ -718,62 +718,17 @@
     }
   }
 
-  /* ========== Tablet (768px to 1023px) ========== */
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .container {
-      display: grid;
-      grid-template-columns: 85px 1fr;
-      max-width: 650px;
-      grid-column: 2 / 4;
-    }
-
-    .achivements {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .resume-content {
-      grid-template-columns: 1fr;
-    }
-
-    /* Contact form side by side */
-    .contact-container {
-      grid-template-columns: 1fr;
-    }
-
-    /* Skills grid to 3 columns */
-    .skills {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    /* Adjust education grid */
-    .edu-container {
-      grid-template-columns: 1fr;
-    }
-
-    /* Smaller padding on profile and projects */
-    .project {
-      padding: 20px;
-    }
-
-    .profile .img {
-      width: 120px;
-      margin: -55px auto 0;
-    }
-  }
 
 
   /* ========== Mobile (below 768px) ========== */
   @media screen and (max-width: 767px) {
     .container {
-      display: inline-grid;
-      width: 100%;
-      grid-template-columns: 1fr;
-      padding: 20px;
-      padding-top: 50px;   
-      max-width: 100%;
-      margin: 0 3px 0 0;
-      position: absolute;
+      display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 25px;
+    margin: 10px auto;
+    max-width: 100%;
     }
 
     .navbar {
@@ -804,8 +759,8 @@
   }
 
   .skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 20px, 30px;
     gap: 10px;
     color: var(--accent-02);
@@ -819,9 +774,8 @@
       gap: 15px;
     }
     .resume-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    flex-wrap: wrap;
+    display: flex;
+      flex-direction: column;
     gap: 30px;
   }
 
@@ -835,21 +789,11 @@
     grid-template-columns: 1fr;
   }
   .contact-container {
-    background: var(--accent-04);
-    padding: 10px;
-    justify-content: space-between;
-    border-radius: 15px;
-    gap: 50px;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
   .contact-section ul{
     list-style: none;
     padding-right: 50px;
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-   gap : 5px
-   
   }
   }
