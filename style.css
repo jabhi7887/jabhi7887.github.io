@@ -114,6 +114,6 @@ nav li:first-child a{
 
 @media(max-width: 400px){
   .sidebar{
-    width: 100%;
+    width: 50%;
   }
 }
