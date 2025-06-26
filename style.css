@@ -1,10 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 *{
   margin: 0;
   padding: 0;
-  transition: color .1s, background-color .5s;
-  color: inherit;
-  text-decoration: inherit;
   box-sizing: border-box;
+  font-family: 'Poppins';  
 }
 body{
   --primary-color:#4FC6CE;
@@ -12,12 +12,10 @@ body{
   --accent-02:#98B1BA;
   --accent-03:#26333A;
   --accent-04:#1A2328;
-  font-family: Calibri sans-serif;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  justify-content: center;
-  background-color: var(--accent-04);
+}
+
+a{
+  text-decoration: none;
   color: var(--accent-01);
 }
 
@@ -29,91 +27,387 @@ body.light{
   --accent-04:#dadfe0;
 }
 
-nav{
-  background-color: var(--accent-03);
-  box-shadow: 3px 1px 5px var(--primary-color);
-  position: sticky;
-}
-
-nav ul{
+.profile-container{
+  min-height: 100vh;
   width: 100%;
+  display: flex;
+}
+/*======navbar========= */
+.navbar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 25px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-nav 1.5s linear forwards;
+  animation-delay: 1s;
+}
+
+@keyframes show-nav {
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.navbar .logo{
+  font-size: 30px;
+  font-weight: 700;
+  justify-content: left;
+}
+
+.navbar .logo span{
+  color: var(--primary-color);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  animation: shake 1.5s forwards;
+  animation-delay: .8s;
+}
+
+@keyframes shake{
+    
+    0%{
+       transform: translateX(0)
+     }
+     25%{
+       transform: translateX(100px);
+     }
+     100%{
+       transform: translateX(0px);
+     }
+  }
+
+.navbar ul{
+  display: flex;
+  margin-right: 20px;
+  gap: 35px;
+}
+
+.navbar ul li{
   list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  margin-left: 40px;
+  justify-content: center;
 }
 
-nav li{
-  height: 50px;
+
+.navbar ul li a{
+  font-size: 20px;
+  font-weight:500 ;
 }
 
-nav a{
-  height: 100%;
-  padding: 0 30px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  color: var(--accent-02);
-  transition: color .5s;
-}
-
-nav a:hover{
+.navbar ul li a:hover,
+.navbar ul li.active a{
   color: var(--primary-color);
 }
 
-nav li:first-child{
-  margin-right: auto;
-  font-weight: 600;
-  font-size: 1.5rem;
-}
-
-nav li:first-child a{
-  color: var(--primary-color);
-}
-
-/*sidebar */
-
-.sidebar{
+.navbar .sidebar{
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
-  width: 250px;
+  width: 65%;
   z-index: 999;
-  background-color: var(--accent-03);
+  background-color: var(--accent-04);
   box-shadow: 1px 0px 10px var(--primary-color);
   display: none;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  padding-left: 30px;
+  gap: 5px;
 }
 
 .sidebar li{
   width: 100%;
+  margin-top: 50px;
 }
 
 .sidebar a{
   width: 100%;
 }
 
+
+
 .menu-btn{
   display: none;
 }
+/*==========end navbar======== */
+
+
+/*===============home======================== */
+.home{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  color: var(--accent-01);
+  gap: 50px;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-nav 1.5s linear forwards;
+  animation-delay: 1s;
+}
+
+.home .home-info,
+.home .home-img{
+  height: 100vh;
+}
+
+.home .home-info{
+  background: var(--accent-04);
+  width: 70%;
+  padding: 15% 20% 0 5%;
+
+}
+
+.home .home-img{
+  background: linear-gradient(-45deg, var(--primary-color), var(--accent-04) 70%);
+  width: 30%;
+}
+
+.home-info h1{
+  font-size: 55px;
+}
+
+.home-info h2{
+  display: inline-block;
+  font-size: 32px;
+  margin-top: -10px;
+}
+
+.home-info h2 span{
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--primary-color);
+  animation: display-text 16s linear infinite;
+  animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes display-text {
+  25%,100%{
+    display: none;
+  }
+}
+
+.home-info h2 span::before{
+  content: attr(text-data);
+  position: absolute;
+  width:0;
+  border-right: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+  10%,100%{
+    width: 0;
+  }
+  70%,90%{
+    width: 100%;
+  }
+}
+
+.home-info p{
+  font-size: 16px;
+  margin: 10px 0 25px;
+}
+
+.home-info .btn-sci{
+  display: flex;
+  align-items: center;
+}
+
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 30px;
+  background: var(--primary-color);
+  border-radius: 40px;
+  box-shadow: 0 0 10px var(--primary-color);
+  color: var(--accent-03);
+  font-size: 16px;
+  font-weight: 600;
+  transition: border .5s;
+}
+
+.btn:hover{
+  background: transparent;
+  color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);;
+  border: 1px solid var(--primary-color);
+}
+
+.home-info .btn-sci .sci{
+  margin: 20px;
+}
+
+.home-info .btn-sci .sci a{
+  display: inline-flex;
+  padding: 8px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--primary-color);
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.home-info .btn-sci .sci a:hover{
+  box-shadow: 0 0 10px var(--primary-color) ;
+  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--accent-04);
+}
+
+.design .circle{
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 50%;
+  top: 52%;
+  left: 71.3%;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+}
+
+.circle:nth-child(1){
+  background: linear-gradient(90deg, transparent 50%, var(--accent-04) 50%);
+  width: 38rem;
+}
+
+.circle:nth-child(2){
+  background-image: url("/images/mypic.png");
+  width: 30rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: .5rem solid var(--accent-01);
+  box-shadow: 0 0 1rem var(--accent-01), inset 0 0 1rem var(--accent-01),
+              0 0 2rem var(--primary-color), inset 0 0 2rem var(--primary-color),
+              0 0 4rem var(--primary-color),
+              inset 0 0 4rem var(--primary-color);
+}
+
+
+/*===============End home======================== */
+
+.bars-animation{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+}
+
+.bars-animation .bar{
+  width: 100%;
+  height: 100%;
+  background: var(--accent-04);
+  transform: translateY(-100%);
+  animation: show-bars .5s ease-in-out forwards;
+  animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes show-bars {
+  100%{
+    transform: translateY(0%);
+  }
+  
+}
 
 /*=======media query===== */
+/*====mobile=====*/
 
-/*====mobile===== */
 @media(max-width: 800px){
-  .hidOnMobile{
+  .hideOnMobile{
     display: none;
   }
   .menu-btn{
     display: block;
   }
+  .sidebar{
+    display: none;
+  }
 }
 
-@media(max-width: 400px){
-  .sidebar{
-    width: 50%;
+@media(max-width: 400px) {
+  .sidebar {
+    width: 100%;
+    visibility: visible;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    align-items: center;
+    background: var(--accent-04); /* ✅ Ensures dark background on mobile */
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .home .home-img {
+    order: -1;
+    width: 100%;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: -90px; /* ✅ Pull image upward */
+  }
+
+  .design .circle {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .circle:nth-child(1),
+  .circle:nth-child(2) {
+    width: 220px;
+    aspect-ratio: 1;
+  }
+
+  .home .home-info {
+    width: 100%;
+    padding: 10px 20px;
+    background: transparent; /* ✅ Prevents unwanted white background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-info h1 {
+    font-size: 28px;
+  }
+
+  .home-info h2 {
+    font-size: 18px;
+  }
+
+  .home-info p {
+    font-size: 14px;
+    color: var(--accent-01);
+    margin: 10px 0 20px;
+  }
+
+  .home-info .btn-sci {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
   }
 }
