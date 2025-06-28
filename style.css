@@ -339,41 +339,62 @@ body.light{
 /**==========About================ */
 
 .about {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  padding: 2rem;
-  position: relative;
-  background: var(--accent-04); 
-  height: 100vh;
+  padding: 4rem 2rem;
+  background: var(--accent-04);
   box-sizing: border-box;
-  z-index: 1;
   max-width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about .heading {
+  font-size: 2.5rem;
+  color: #00f2ff;
+  margin-bottom: 2rem;
+}
+
+.about .heading span {
+  color: #ff00c8;
+}
+
+.about-inner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about-img {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: auto; /* Let it grow based on image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-border {
   padding: 8px;
-  background: linear-gradient(45deg, #00f2ff,black, var(--primary-color));
+  background: linear-gradient(45deg, #00f2ff, black, var(--primary-color));
   background-size: 300% 300%;
   animation: borderAnim 6s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: auto; /* allow flexible height */
 }
+
 
 .img-border img {
   width: 100%;
-  height: 400px;
+  height: 500px; /* 🔼 Increase height */
   object-fit: cover;
   border: 5px solid #1e1f26;
+  border-radius: 8px;
 }
 
 @keyframes borderAnim {
@@ -384,18 +405,8 @@ body.light{
 
 .about-content {
   max-width: 600px;
+  text-align: left;
   color: #f5f5f5;
-}
-
-.heading {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #00f2ff;
-  margin-top: 45px;
-}
-
-.about-content h2 span {
-  color: #ff00c8;
 }
 
 .about-content h3 {
@@ -433,7 +444,7 @@ body.light{
 }
 
 .about-bio {
-  font-size: .2rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
   color: #ccc;
 }
@@ -1050,7 +1061,7 @@ body.light{
     padding-top: 20px;
     align-items: center;
     background: var(--accent-04); /* ✅ Ensures dark background on mobile */
-    min-height: 100vh;
+    height: auto;
     overflow: hidden;
   }
 
@@ -1071,6 +1082,7 @@ body.light{
     left: auto;
     transform: none;
     margin: 0 auto;
+    margin-top: -30%;
   }
 
   .circle:nth-child(1),
@@ -1086,6 +1098,8 @@ body.light{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
+    margin-top: -45%;
   }
 
   .home-info h1 {
@@ -1113,9 +1127,11 @@ body.light{
   }
 
   .about {
-    height: 90%;
+    height: auto;
+  }
+
+  .about .about-content{
     text-align: center;
-    top: 0;
   }
 
   .about .column{
@@ -1149,9 +1165,20 @@ body.light{
   }
 
   .services-container {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     margin-left: 5%;
     margin-right: 5%;
+  }
+
+  .services-box .services-icon{
+    font-size: 2.5rem;
+  }
+  .services-box h3{
+    font-size: 1.2rem;
+  }
+  .services-box p{
+    font-size: .8rem;
   }
 
   .project-vertical-container {
@@ -1162,6 +1189,22 @@ body.light{
   .project-vertical-card {
     width: 100%;
   }
+
+ .projects .card-front h3{
+  font-size: 1rem;
+ }
+
+ .projects .card-front p{
+  font-size: .8rem;
+ }
+
+ .projects .card-back p{
+  font-size: .6rem;
+ }
+
+ .projects .card-back .btn{
+  font-size: .5rem;
+ }
 
   .contact-container {
     flex-direction: column;
