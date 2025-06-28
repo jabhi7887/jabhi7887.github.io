@@ -7,47 +7,47 @@
   <link rel="stylesheet" href="style.css">
   <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
   <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+
+  <div class="bars-animation">
+  <div class="bar" style="--i:6;"></div>
+  <div class="bar" style="--i:5;"></div>
+  <div class="bar" style="--i:4;"></div>
+  <div class="bar" style="--i:3;"></div>
+  <div class="bar" style="--i:2;"></div>
+  <div class="bar" style="--i:1;"></div>
+</div>
+
+
   <div class="profile-container">
-
-    <div class="bars-animation">
-      <div class="bar" style="--i:6;"></div>
-      <div class="bar" style="--i:5;"></div>
-      <div class="bar" style="--i:4;"></div>
-      <div class="bar" style="--i:3;"></div>
-      <div class="bar" style="--i:2;"></div>
-      <div class="bar" style="--i:1;"></div>
-    </div>
-
-
     <!--------------Navbar---------------->
     <nav class="navbar">
       <ul class="sidebar">
         <li onclick="closeSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4FC6CE"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-        <li class="active"><a href="home">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Resume</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="aitem active"><a href="#home">Home</a></li>
+        <li class="item "><a href="#about">About</a></li>
+        <li class="item "><a href="#services">Service</a></li>
+        <li class="item "><a href="#projects">Projects</a></li>
+        <li class="item "><a href="#contact">Contact</a></li>
       </ul>
 
       <a class="logo" href="#">Port<span class="vertical-shake">filio.</span></a>
       <ul>
-        <li class="hideOnMobile active"><a href="#home">Home</a></li>
-        <li class="hideOnMobile"><a href="#">About</a></li>
-        <li class="hideOnMobile"><a href="#">Resume</a></li>
-        <li class="hideOnMobile"><a href="#">Projects</a></li>
-        <li class="hideOnMobile"><a href="#">Contact</a></li>
+        <li class="hideOnMobile item active"><a href="#home">Home</a></li>
+        <li class="hideOnMobile item "><a href="#about">About</a></li>
+        <li class="hideOnMobile item "><a href="#services">Services</a></li>
+        <li class="hideOnMobile item "><a href="#projects">Projects</a></li>
+        <li class="hideOnMobile item "><a href="#contact">Contact</a></li>
         <li class="menu-btn" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4FC6CE"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
       </ul>      
     </nav>
-    
-    
     <!--------------End Navbar---------------->
 
     <!-----------------Profile----------------------->
-    <section class="home">
+    <section class="home" id="home">
       <div class="home-info">
         <h1>Abhishek Jadhav</h1>
         <h2>I'm a 
@@ -72,16 +72,316 @@
       </div>
       
       <div class="home-img">
-        <div class="design">
+        <div class="design profile-original">
           <div class="circle"></div>
           <div class="circle"></div>
         </div>
       </div>
     </section>
+    </div>
     <!-------------End Profile----------------------->
-  
+    <!-------------About---------------------------------->
+    <section class="about" id="about">
+  <div class="about-img">
+    <div class="img-border">
+      <img src="/images/mypic.png" alt="My Picture">
+    </div>
   </div>
-<script src="
-  script.js"></script>
+  <div class="about-content">
+    <h2 class="heading">ABOUT <span>ME</span></h2>
+    <h3>UI/UX Designer & Web Developer</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <div class="about-info">
+      <div class="column">
+        <p><strong>Birthday:</strong> 1 May 1995</p>
+        <p><strong>Website:</strong> www.example.com</p>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+        <p><strong>City:</strong> New York, USA</p>
+      </div>
+      <div class="column">
+        <p><strong>Age:</strong> 30</p>
+        <p><strong>Degree:</strong> Master</p>
+        <p><strong>Email:</strong> email@example.com</p>
+        <p><strong>Freelance:</strong> Available</p>
+      </div>
+    </div>
+
+    <p class="about-bio">
+      Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut.
+      Nulla accusantium dolor incidunt officia tempore.
+    </p>
+  </div>
+</section>
+
+<!-----------Experience-------------------->
+<section class="experience-skills" id="experience">
+  <div class="internship-container">
+    <h2 class="heading">INTERNSHIP <span>EXPERIENCE</span></h2>
+    <div class="internship-content">
+      <div class="internship-details">
+        <h3>Python Developer Intern – RVIC, Bengaluru</h3>
+        <ul>
+          <li>Built a chatbot in Python to support rural education initiatives.</li>
+          <li>Used NLP to enhance response accuracy and context understanding.</li>
+          <li>Wrote optimized SQL queries for faster data access.</li>
+          <li>Worked with Flask and REST APIs to connect backend services.</li>
+          <li>Participated in testing and debugging with the dev team.</li>
+        </ul>
+      </div>
+
+      <div class="internship-skills">
+        <h3>Skills Used</h3>
+        <div class="skills-box">
+          <span>Python</span>
+          <span>NLP</span>
+          <span>SQL</span>
+          <span>Flask</span>
+          <span>REST APIs</span>
+          <span>Git</span>
+          <span>Debugging</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skills-container">
+    <h2 class="heading">MY <span>SKILLS</span></h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="card-inner">
+          <div class="card-front">Python</div>
+          <div class="card-back">Experienced in scripting, data handling, and Flask/Django</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="card-inner">
+          <div class="card-front">Java</div>
+          <div class="card-back">OOP, Spring Boot APIs, backend logic</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="card-inner">
+          <div class="card-front">MySQL</div>
+          <div class="card-back">Efficient querying, joins, stored procedures</div>
+        </div>
+      </div>
+      <!-- Add more cards similarly -->
+    </div>
+  </div>
+</section>
+
+<!-----------End Experience-------------------->
+
+
+    <!-------------End About---------------------------------->
+
+    <section class="services" id="services">
+  <h2 class="heading">MY <span>SERVICES</span></h2>
+  <div class="services-container">
+
+    <div class="services-box">
+      <div class="services-icon"><i class='bx bx-code-alt'></i></div>
+      <h3>Web Development</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ducimus nostrum molestias voluptas laborum unde omnis.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+
+    <div class="services-box">
+      <div class="services-icon"><i class='bx bx-palette'></i></div>
+      <h3>UI/UX Designs</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ducimus nostrum molestias voluptas laborum unde omnis.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+
+    <div class="services-box">
+      <div class="services-icon"><i class='bxl bx-android'></i></div>
+      <h3>App Development</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ducimus nostrum molestias voluptas laborum unde omnis.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </div>
+</section>    
+<!-------------EndService---------------------------------->
+
+<!----------------------Project-------------------------------------------->
+<section class="projects" id="projects">
+  <h2 class="heading">MY <span>PPROJECTS</span></h2>
+  <div class="project-vertical-container">
+
+    <div class="project-vertical-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Smart Crop Estimator</h3>
+          <p>Django · Python · ML · Voice</p>
+        </div>
+        <div class="card-back">
+          <p>An AI-based crop prediction system with yield & health detection using Django + voice assistant.</p>
+          <a href="https://github.com/jabhi7887/agrisense" target="_blank" class="btn">Use Project</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-vertical-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Responsive Portfolio</h3>
+          <p>HTML · CSS · JS</p>
+        </div>
+        <div class="card-back">
+          <p>Personal portfolio with theme toggler, responsive layout and interactive animations.</p>
+          <a href="https://jabhi7887.netlify.app" target="_blank" class="btn">View Live</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-vertical-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Traffic Violation System</h3>
+          <p>Flask · OpenCV · MySQL</p>
+        </div>
+        <div class="card-back">
+          <p>Real-time detection of traffic rule violations with auto-logging and dashboard interface.</p>
+          <a href="#" class="btn">Request Access</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-vertical-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Traffic Violation System</h3>
+          <p>Flask · OpenCV · MySQL</p>
+        </div>
+        <div class="card-back">
+          <p>Real-time detection of traffic rule violations with auto-logging and dashboard interface.</p>
+          <a href="#" class="btn">Request Access</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-vertical-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Traffic Violation System</h3>
+          <p>Flask · OpenCV · MySQL</p>
+        </div>
+        <div class="card-back">
+          <p>Real-time detection of traffic rule violations with auto-logging and dashboard interface.</p>
+          <a href="#" class="btn">Request Access</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-vertical-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Traffic Violation System</h3>
+          <p>Flask · OpenCV · MySQL</p>
+        </div>
+        <div class="card-back">
+          <p>Real-time detection of traffic rule violations with auto-logging and dashboard interface.</p>
+          <a href="#" class="btn">Request Access</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!----------------------End Project-------------------------------------------->
+
+<!-------------------------Contact----------------------------------->
+<section class="contact" id="contact">
+  <h2 class="heading" data-aos="fade-down">CONTACT <span>ME</span></h2>
+
+  <div class="contact-container">
+    <!-- LEFT SIDE: Info, Socials & Map -->
+    <div class="contact-info" data-aos="fade-right">
+      <h3>Let's Work Together</h3>
+      <p>If you have a project, idea, or just want to connect — feel free to drop a message! Always open to collaboration, freelance, or full-time opportunities.</p>
+      <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+      <p>Location: Hubli, India</p>
+
+      <!-- Social Icons -->
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/jabhi7887" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/jabhi7887" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
+      </div>
+
+      <!-- Google Map -->
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.909121750486!2d75.1186314!3d15.3647084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d71abbb444d3%3A0xe41a70d5fa7b6fa!2sHubli%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1626243345483!5m2!1sen!2sin" 
+          width="100%" 
+          height="200" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: Contact Form -->
+    <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form" data-aos="fade-left">
+      <div class="input-box">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Include AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<!-------------------------End Contact----------------------------------->
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Footer Navbar -->
+    <ul class="footer-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Social Icons -->
+        <div class="footer-social">
+            <a href="#"><i class='bxl bx-github'></i></a>
+            <a href="#"><i class='bxl bx-facebook'></i></a>
+            <a href="#"><i class='bxl bx-linkedin'></i></a>
+            <a href="#"><i class='bxl bx-instagram'></i></a>
+          </div>
+
+    <p class="footer-credit">© 2025 Abhishek Jadhav. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
 </body>
 </html>
