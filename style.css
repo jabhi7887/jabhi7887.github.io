@@ -12,6 +12,9 @@ body{
   --accent-02:#98B1BA;
   --accent-03:#26333A;
   --accent-04:#1A2328;
+  --pink:#ff00c8;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 a{
@@ -26,6 +29,34 @@ body.light{
   --accent-03:#ccd4d7;
   --accent-04:#dadfe0;
 }
+
+.bars-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+  pointer-events: none; /* Prevents it from interfering with interactions */
+}
+
+.bars-animation .bar {
+  flex: 1;
+  height: 100%;
+  background: var(--accent-04);
+  transform: translateY(-100%);
+  animation: show-bars 0.5s ease-in-out forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes show-bars {
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
 
 .profile-container{
   min-height: 100vh;
@@ -60,10 +91,11 @@ body.light{
   font-size: 30px;
   font-weight: 700;
   justify-content: left;
+  color: var(--primary-color);
 }
 
 .navbar .logo span{
-  color: var(--primary-color);
+  color: var(--pink);
   position: absolute;
   transform: translate(-50%, -50%);
   font-size: 1em;
@@ -108,7 +140,7 @@ body.light{
 }
 
 .navbar .sidebar{
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   height: 100vh;
@@ -152,6 +184,10 @@ body.light{
   opacity: 0;
   animation: show-nav 1.5s linear forwards;
   animation-delay: 1s;
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .home .home-info,
@@ -237,6 +273,7 @@ body.light{
   font-size: 16px;
   font-weight: 600;
   transition: border .5s;
+  cursor: pointer;
 }
 
 .btn:hover{
@@ -298,34 +335,693 @@ body.light{
 
 /*===============End home======================== */
 
-.bars-animation{
+
+/**==========About================ */
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+  position: relative;
+  background: var(--accent-04); 
+  height: 100vh;
+  box-sizing: border-box;
+  z-index: 1;
+  max-width: 100%;
+}
+
+.about-img {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.img-border {
+  padding: 8px;
+  background: linear-gradient(45deg, #00f2ff,black, var(--primary-color));
+  background-size: 300% 300%;
+  animation: borderAnim 6s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-border img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border: 5px solid #1e1f26;
+}
+
+@keyframes borderAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.about-content {
+  max-width: 600px;
+  color: #f5f5f5;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00f2ff;
+  margin-top: 45px;
+}
+
+.about-content h2 span {
+  color: #ff00c8;
+}
+
+.about-content h3 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 2rem;
+  line-height: 1.6;
+  color: #dcdcdc;
+}
+
+.about-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.about-info .column {
+  flex: 1 1 250px;
+  color: #dcdcdc;
+}
+
+.about-info p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.about-info strong {
+  color: #00f2ff;
+}
+
+.about-bio {
+  font-size: .2rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+/**===========Experience=============== */
+
+/*==== Internship Section =====*/
+.experience-skills {
+  background: var(--accent-04);
+  padding: 4rem 2rem;
+  color: #fff;
+  height: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.experience-skills h2{
+  font-size: 2.5rem;
+}
+
+.experience-skills h2 span{
+  color: var(--pink);
+}
+.internship-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.internship-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.internship-details {
+  flex: 1 1 55%;
+  background: var(--accent-03);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.internship-details h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.internship-details ul {
+  padding-left: 1.2rem;
+}
+
+.internship-details li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  list-style: disc;
+}
+
+.internship-skills {
+  flex: 1 1 35%;
+  background: var(--accent-03);
+  border: 2px solid var(--primary-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 1s ease-in-out;
+}
+
+.internship-skills h3 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.skills-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.skills-box span {
+  background: var(--accent-04);
+  border: 1px solid #00f2ff;
+  color: #00f2ff;
+  padding: 0.4rem 0.9rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.skills-box span:hover {
+  background: #00f2ff;
+  color: #000;
+}
+
+/*==== Skill Flip Cards =====*/
+.skills-container {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.skills-container .heading {
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.skill-card {
+  width: 180px;
+  height: 180px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.skill-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
+  background: var(--accent-03);
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
   display: flex;
-  z-index: -1;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 1rem;
+  backface-visibility: hidden;
+  text-align: center;
 }
 
-.bars-animation .bar{
+.card-front {
+  background: linear-gradient(135deg, #1a1f2b, #222);
+  font-weight: 600;
+  color: #00f2ff;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #2c1a2e, #1a1f2b);
+  transform: rotateY(180deg);
+  font-size: 0.95rem;
+  color: #ccc;
+  padding: 1.2rem;
+}
+
+/*==== Animations =====*/
+@keyframes slideInLeft {
+  0% { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/*==== Responsive (Mobile/Tablet) =====*/
+@media (max-width: 768px) {
+  .internship-content {
+    flex-direction: column;
+  }
+
+  .internship-details, .internship-skills {
+    width: 100%;
+  }
+
+  .skills-grid {
+    gap: 1rem;
+  }
+
+  .skill-card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .card-front, .card-back {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+/**==============Services================= */
+.services {
+  background: var(--accent-04);
+  padding: 5rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.services .heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #00f2ff;
+  margin-top: 2px;
+}
+
+.services .heading span {
+  color: #ff00c8;
+}
+
+.services-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.services-box {
+  flex: 1 1 300px;
+  background: var(--accent-03);
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  transition: 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+.services-box:hover {
+  border: 2px solid var(--primary-color);
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
+}
+
+.services-icon {
+  font-size: 5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  transition: 0.3s ease;
+}
+
+.services-box:hover .services-icon {
+  transform: rotate(10deg) scale(1.1);
+  filter: drop-shadow(0 0 10px var(--primary-color));
+}
+
+.services-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.services-box p {
+  font-size: 1.2rem;
+  color: #dcdcdc;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.services-box .btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  background-color: var(--primary-color);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.services-box .btn:hover {
+  background-color: #ff00c8;
+  color: #fff;
+}
+
+/**======================Project======================== */
+.projects {
+  padding: 2rem 2rem;
+  background: var(--accent-04);
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.projects .heading {
+  font-size: 2.5rem;
+  color: #00f2ff;
+  margin-bottom: 3rem;
+}
+
+.projects .heading span {
+  color: #ff00c8;
+}
+
+.project-vertical-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-right: 10%;
+  margin-left: 17%;
+  gap: 2rem;
+}
+
+.project-vertical-card {
+  width: 250px;
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
   width: 100%;
   height: 100%;
-  background: var(--accent-04);
-  transform: translateY(-100%);
-  animation: show-bars .5s ease-in-out forwards;
-  animation-delay: calc(.1s * var(--i));
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-@keyframes show-bars {
-  100%{
-    transform: translateY(0%);
-  }
-  
+.project-vertical-card:hover .card-inner {
+  transform: rotateY(180deg);
 }
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-03);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+  color: #fff;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: 0.3s ease;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #1a1f2b, #222);
+  box-shadow: 0 0 20px #00f2ff30;
+}
+
+.card-front h3 {
+  font-size: 1.3rem;
+  color: #00f2ff;
+}
+
+.card-front p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #2c1a2e, #1a1f2b);
+  box-shadow: 0 0 20px #ff00c880;
+}
+
+.card-back p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.card-back .btn {
+  background: #00f2ff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.card-back .btn:hover {
+  background: #ff00c8;
+  color: #fff;
+}
+
+/**===========Contact=================== */
+.contact {
+  padding: 4rem 2rem;
+  background: var(--accent-04);
+  color: #fff;
+  height: 100%;
+  padding-top: 12px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.contact .heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #00f2ff;
+}
+
+.contact .heading span {
+  color: #ff00c8;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  background: var(--accent-03);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px #ff00c840;
+}
+
+.contact-info h3 {
+  font-size: 1.6rem;
+  color: #00f2ff;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.contact-info a {
+  color: #00f2ff;
+  text-decoration: underline;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: var(--accent-03);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px #00f2ff50;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-box {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.input-box input {
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  background: #1e1f26;
+  border: 1px solid transparent;
+  border-radius: 0.8rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00f2ff;
+  outline: none;
+  box-shadow: 0 0 10px #00f2ff80;
+}
+
+.contact-form .btn {
+  align-self: flex-end;
+  background: #00f2ff;
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-form .btn:hover {
+  background: #ff00c8;
+  color: #fff;
+  box-shadow: 0 0 15px #ff00c880;
+}
+/**=============footer=========================== */
+
+.footer {
+  background: var(--accent-03);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-nav li a {
+  color: #00f2ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.footer-nav li a:hover {
+  color: #ff00c8;
+}
+
+.footer-social {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-social a {
+  font-size: 1.8rem;
+  color: #00f2ff;
+  transition: 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ff00c8;
+  transform: scale(1.2);
+}
+
+.footer-credit {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 1rem;
+}
+
 
 /*=======media query===== */
 /*====mobile=====*/
 
-@media(max-width: 800px){
+@media(max-width: 1024px){
   .hideOnMobile{
     display: none;
   }
@@ -337,7 +1033,12 @@ body.light{
   }
 }
 
-@media(max-width: 400px) {
+/* ======= Desktop (Default Styles already applied) ======= */
+/* Your existing styles are for desktop (width > 1024px) */
+
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
   .sidebar {
     width: 100%;
     visibility: visible;
@@ -388,15 +1089,15 @@ body.light{
   }
 
   .home-info h1 {
-    font-size: 28px;
+    font-size: 2rem;
   }
 
   .home-info h2 {
-    font-size: 18px;
+    font-size: 1.5rem;
   }
 
   .home-info p {
-    font-size: 14px;
+    font-size: 1rem;
     color: var(--accent-01);
     margin: 10px 0 20px;
   }
@@ -410,4 +1111,472 @@ body.light{
     width: 80%;
     text-align: center;
   }
+
+  .about {
+    height: 90%;
+    text-align: center;
+    top: 0;
+  }
+
+  .about .column{
+    padding-left: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: 5px;
+  }
+
+  .about .column p{
+    font-size: .7rem;
+  }
+
+  .img-border img {
+    height: auto;
+  }
+
+  .experience-skills,
+  .internship-content,
+  .internship-details,
+  .internship-skills {
+    flex-direction: column;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .skill-card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .services-container {
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .project-vertical-container {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
+
+  .project-vertical-card {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
 }
+
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .sidebar {
+    width: 100%;
+    visibility: visible;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    align-items: center;
+    background: var(--accent-04); /* ✅ Ensures dark background on mobile */
+    overflow: hidden;
+  }
+
+  .home .home-img {
+    order: -1;
+    width: 100%;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: -150px; /* ✅ Pull image upward */
+  }
+
+  .design .circle {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .circle:nth-child(1),
+  .circle:nth-child(2) {
+    width: 220px;
+    aspect-ratio: 1;
+  }
+
+  .home .home-info {
+    width: 100%;
+    padding: 10px 20px;
+    background: transparent; /* ✅ Prevents unwanted white background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-info h1 {
+    font-size: 2rem;
+  }
+
+  .home-info h2 {
+    font-size: 1.5;
+  }
+
+  .home-info p {
+    font-size: 1rem;
+    color: var(--accent-01);
+    margin: 10px 0 20px;
+  }
+
+  .home-info .btn-sci {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+
+  .about {
+    height: 90%;
+    text-align: center;
+  }
+
+  .about .column{
+    padding-left: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: 5px;
+  }
+
+  .about .column p{
+    font-size: 1rem;
+  }
+
+
+  .img-border img {
+    height: auto;
+  }
+
+  .experience-skills,
+  .internship-content,
+  .internship-details,
+  .internship-skills {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .skill-card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .services-container {
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .project-vertical-container {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
+
+  .project-vertical-card {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+    visibility: visible;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    align-items: center;
+    background: var(--accent-04); /* ✅ Ensures dark background on mobile */
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .home .home-img {
+    order: -1;
+    width: 100%;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: -150px; /* ✅ Pull image upward */
+  }
+
+  .design .circle {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .circle:nth-child(1),
+  .circle:nth-child(2) {
+    width: 220px;
+    aspect-ratio: 1;
+  }
+
+  .home .home-info {
+    width: 100%;
+    padding: 10px 20px;
+    background: transparent; /* ✅ Prevents unwanted white background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-info h1 {
+    font-size: 2.5;
+  }
+
+  .home-info h2 {
+    font-size: 2rem;
+  }
+
+  .home-info p {
+    font-size: 1.2rem;
+    color: var(--accent-01);
+    margin: 10px 0 20px;
+  }
+
+  .home-info .btn-sci {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+
+  .about {
+    height: 100%;
+    text-align: center;
+  }
+
+  .about .column{
+    padding-left: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+  }
+
+  .about .column p{
+    font-size: 1.2rem;
+  }
+
+
+  .img-border img {
+    height: auto;
+  }
+
+  .experience-skills,
+  .internship-content,
+  .internship-details,
+  .internship-skills {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .skill-card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .services-container {
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .project-vertical-container {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
+
+  .project-vertical-card {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .sidebar {
+    width: 100%;
+    visibility: visible;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    align-items: center;
+    background: var(--accent-04); /* ✅ Ensures dark background on mobile */
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .home .home-img {
+    order: -1;
+    width: 100%;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: -150px; /* ✅ Pull image upward */
+  }
+
+  .design .circle {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .circle:nth-child(1),
+  .circle:nth-child(2) {
+    width: 220px;
+    aspect-ratio: 1;
+  }
+
+  .home .home-info {
+    width: 100%;
+    padding: 10px 20px;
+    background: transparent; /* ✅ Prevents unwanted white background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-info h1 {
+    font-size: 3rem;
+  }
+
+  .home-info h2 {
+    font-size: 2.2rem;
+  }
+
+  .home-info p {
+    font-size: 1.4rem;
+    color: var(--accent-01);
+    margin: 10px 0 20px;
+  }
+
+  .home-info .btn-sci {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+
+  .about {
+    height: 100%;
+    text-align: center;
+  }
+
+  .about .column{
+    padding-left: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: 20px;
+  }
+
+  .about .column p{
+    font-size: 1.2rem;
+  }
+
+
+  .img-border img {
+    height: auto;
+  }
+
+  .experience-skills,
+  .internship-content,
+  .internship-details,
+  .internship-skills {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .skill-card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .services-container {
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .project-vertical-container {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
+
+  .project-vertical-card {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+}
+
+
