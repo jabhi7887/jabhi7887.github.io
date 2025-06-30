@@ -9,13 +9,29 @@ function closeSidebar() {
 }
 
 
-const menuItem = document.querySelectorAll('.navbar .item');
-menuItem.forEach(item => {
-  item.addEventListener('click', () => {
-    menuItem.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".navbar .item, .sidebar .item");
+
+window.addEventListener("scroll", () => {
+  let currentSection = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.clientHeight;
+    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  navItems.forEach(item => {
+    const link = item.querySelector("a");
+    item.classList.remove("active");
+    if (link.getAttribute("href") === `#${currentSection}`) {
+      item.classList.add("active");
+    }
   });
 });
+
 
 
   function closeSidebar() {
