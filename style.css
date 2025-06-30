@@ -214,7 +214,7 @@ body.light{
 .home-info h2{
   display: inline-block;
   font-size: 32px;
-  margin-top: -10px;
+  margin-top: -20px;
 }
 
 .home-info h2 span{
@@ -749,6 +749,7 @@ body.light{
   background: var(--accent-04);
   text-align: center;
   max-width: 100%;
+  max-height: 100%;
   box-sizing: border-box;
 }
 
@@ -756,6 +757,7 @@ body.light{
   font-size: 2.5rem;
   color: #00f2ff;
   margin-bottom: 3rem;
+  margin-top: 3%;
 }
 
 .projects .heading span {
@@ -866,6 +868,7 @@ body.light{
   text-align: center;
   margin-bottom: 3rem;
   color: #00f2ff;
+  margin-top: 4%;
 }
 
 .contact .heading span {
@@ -1099,7 +1102,7 @@ body.light{
     flex-direction: column;
     align-items: center;
     height: auto;
-    margin-top: -65%;
+    margin-top: -50%;
   }
 
   .home-info h1 {
@@ -1108,6 +1111,7 @@ body.light{
 
   .home-info h2 {
     font-size: 1.5rem;
+    margin-top: 0;
   }
 
   .home-info p {
@@ -1167,6 +1171,10 @@ body.light{
   .skill-card {
     width: 130px;
     height: 130px;
+  }
+  .skill-card i{
+    font-size: 1.5rem;
+    color: var(--primary-color);
   }
 
   .services-container {
